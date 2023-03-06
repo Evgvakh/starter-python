@@ -14,7 +14,7 @@ def game():
                 arr.append(line)
     file.close()
 
-    word = arr[randomIndex(0, len(arr) - 1)]    
+    word = arr[randomIndex(0, len(arr) - 1)].lower()    
     hiddenWord = word
 
     for i in range(len(hiddenWord) - 1):
@@ -36,19 +36,18 @@ def game():
         isUsed = False
         while isUsed != True:
             if charsArr.count(char) > 0:
-                char = input('Vous avez deja utilisé cette lettre. Veuillez eesayer une autre')
+                char = input('Vous avez deja utilisé cette lettre. Veuillez essayer une autre')
             else:
                 charsArr.append(char)  
                 isUsed = True
             
         for i in range(len(wordArr)):
-            if wordArr[i] == char:
-                print(wordArr[i])
-                print(hiddenWordArr[i])
+            if wordArr[i] == char:                
                 hiddenWordArr[i] = char
 
         count += 1                    
-        print(hiddenWordArr)
+        print(hiddenWordArr)        
+
     print('Le mot cherché est: ' + "".join(hiddenWordArr))    
     print('Vous avez utilisé ' + str(count) + ' essais')    
             
