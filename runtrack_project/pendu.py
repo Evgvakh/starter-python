@@ -64,5 +64,9 @@ def isEndVerify(array):
 def randomIndex(start, stop):
     return random.randint(start, stop)
 
+
+
+
+
 game()
     
